@@ -5,7 +5,7 @@ class Device(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	posicaox = db.Column(db.Float)
 	posicaoy = db.Column(db.Float)
-	Measurements = db.Relationship('Measurement')
+	Measurements = db.relationship('Measurement')
 	
 class Measurement(db.Model):
         id_Measurement = db.Column(db.Integer, db.ForeignKey('device.id'))

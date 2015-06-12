@@ -39,7 +39,7 @@ def exibir_dados():
 	return jsonify({'status:': True})
 
 @prog.route('/greenhouse/new', methods=['POST'])
-def exibir_dados():
+def exibir_dados2():
 	if not request.json:
 		return jsonify({'status': False})
 
