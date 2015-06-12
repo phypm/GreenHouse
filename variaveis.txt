@@ -9,3 +9,5 @@
 "Temperatura": 22,
 "Luminosidade": 80
 }
+
+
