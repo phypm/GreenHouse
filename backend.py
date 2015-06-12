@@ -17,8 +17,8 @@ def index():
 def device():
 	sensores = []
 	for i in Device.query.all():
-		print i.nome, i.valor, i.hora
-		sensores.append({'id': i.id, 'nome': i.nome, 'valor': i.valor, 'hora': i.hora})
+		print i.time, i.temp, i.lum
+		sensores.append({'Horario de Medicao': i.date.isoformat(), 'Temperatura': i.temp, 'Luminosidade': i.lum})
 
 	return json.dumps(sensores)
 
