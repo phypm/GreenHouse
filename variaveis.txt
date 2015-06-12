@@ -1,11 +1,11 @@
 /greenhouse/new:POST
 {
-"Posicao em X": 3
+"Posicao em X": 3,
 "Posicao em Y": 2
 }
 /measurement:POST
 {
-"Temperatura": 22
-"Luminosidade": 80
+"Temperatura": 22,
+"Luminosidade": 80,
 "Horario de Medicao": 16:20
 }

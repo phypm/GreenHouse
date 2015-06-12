@@ -3,7 +3,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 import json
 
 prog = Flask(__name__)
-prog.config['SQLALCHEMY_DATABSE_URI'] = 'sqlite:///greenhouse'
+prog.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///greenhouse'
 db = SQLAlchemy(prog)
 
 from  prototype import *
@@ -29,7 +29,7 @@ def exibir_dados():
 		return jsonify({'status': False})
 
 	p = request.get_json()
-	s = Device()
+	s = Measurement()
 	s.temp = p['Temperatura']
 	s.lum = p['Luminosidade']
 	s.time = p ['Horario de Medicao']
@@ -44,9 +44,9 @@ def exibir_dados2():
 		return jsonify({'status': False})
 
 	p = request.get_json()
-	m = Measurement()
-	m.posicaox= m('Posicao em X')
-	m.posicaoy= m ('Posicao em y')
+	m = Device()
+	m.posicaox= p['Posicao em X']
+	m.posicaoy= p ['Posicao em Y']
 	db.session.add(m)
 	db.session.commit()
 
