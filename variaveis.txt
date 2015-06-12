@@ -5,7 +5,7 @@
 }
 /measurement:POST
 {
+"id" : 2,
 "Temperatura": 22,
-"Luminosidade": 80,
-"Horario de Medicao": 16:20
+"Luminosidade": 80
 }

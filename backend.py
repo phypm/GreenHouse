@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask.ext.sqlalchemy import SQLAlchemy
+from datetime import datetime
 import json
 
 prog = Flask(__name__)
@@ -30,9 +31,10 @@ def exibir_dados():
 
 	p = request.get_json()
 	s = Measurement()
+	s.id_device = p['id']
 	s.temp = p['Temperatura']
 	s.lum = p['Luminosidade']
-	s.time = p ['Horario de Medicao']
+	s.time = datetime.today()
 	db.session.add(s)
 	db.session.commit()
 
