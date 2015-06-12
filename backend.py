@@ -11,9 +11,9 @@ from  prototype import *
 
 @prog.route ('/ghtest')
 def index():
-    return "Greenhouse"
+    return "Greenhouse, as rotas utilizadas foram: '/post/greenhouse' e '/get/greenhouse'"
 
-@prog.route('/get/greenhouse', methods=['GET'])
+@prog.route('/greenhouse', methods=['GET'])
 def device():
 	sensores = []
 	for i in Device.query.all():
@@ -23,20 +23,35 @@ def device():
 	return json.dumps(sensores)
 
 
-@prog.route('/post/greenhouse', methods=['POST'])
+@prog.route('/measurement', methods=['POST'])
 def exibir_dados():
 	if not request.json:
 		return jsonify({'status': False})
 
 	p = request.get_json()
 	s = Device()
-	s.nome = p['nome']
-	s.valor = p['valor']
-	s.hora = p ['hora']
+	s.temp = p['Temperatura']
+	s.lum = p['Luminosidade']
+	s.time = p ['Horario da medicao']
 	db.session.add(s)
 	db.session.commit()
 
 	return jsonify({'status:': True})
+
+@prog.route('/post/greenhouse', methods=['POST'])
+def exibir_dados():
+	if not request.json:
+		return jsonify({'status': False})
+
+	p = request.get_json()
+	m = Measurement()
+	m.id= m('ID')
+	m.posicaox= m('Posicao em X')
+	m.posicaoy= m ('Posicao em y')
+	db.session.add(s)
+	db.session.commit()
+
+	return jsonify({'status:': True})    
 
 if (__name__)== '__main__':
     prog.run(debug = True)
