@@ -7,8 +7,8 @@ class Device(db.Model):
 	posicaoy = db.Column(db.Float)
 	Measurements = db.Relationship('Measurement')
 	
-class Measurement (db.Model):
-        id_Measurement = db.Column(db.Integer, db.ForeignKey('Device.id'))
+class Measurement(db.Model):
+        id_Measurement = db.Column(db.Integer, db.ForeignKey('device.id'))
         temp = db.Column(db.Float)
         lum = db.Column(db.Float)
         time = db.Column(db.DateTime, primary_key= True)
