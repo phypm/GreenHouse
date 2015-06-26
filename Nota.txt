@@ -1,0 +1,7 @@
+Nota: 2.3
+Comentario: Um device nao possui luminosidade nem temperatura. Logo a funcao de
+listagem nao funciona. Voces executaram uma vez para testar? Apesar das
+sugestoes de correcoes aplicadas, não parece ter havido um completo entendimento
+do codigo do projeto. Ponto positivo ter entregue a documentacao junto com o
+codigo e a tela inical indicando as rotas (mas ela poderia estar no index e nao
+no no /ghtest né? Como o usuario iria descobrir sem olhar o código?)
